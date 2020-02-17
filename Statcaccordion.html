@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Static Accordian</title>
+        <meta name="description" content="Basic dependency-free accordian menu">
+        <meta name="author" content="DevMarketer">
+      <link rel="stylesheet" href="style.css">
+      <style>
+                    .acordian {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    text-align: left;
+                    border: none;
+                    outline: none;
+                    transition: 0.4s;
+                    }
+                    
+                    .acordian:after
+                    {
+                        content: '\02795';/*for plus sign */
+                        float-size : 15px;
+                        float: right;
+                        margin-left: 5px ;
+                    }
+                    .active::after
+                    {
+                        
+                        content: '\02796';/*for plus sign */
+                        float-size : 15px;
+                        float: right;
+                        margin-left: 5px ;  
+                    }
+                    .active, .acordian:hover {
+                        background-color: #ccc;
+                    }
+                    .displayinfo
+                    {
+                        padding: 0 18px;
+                        background-color: white;
+                        border-left: 1px solid white;
+                        border-right: 1px solid white;
+                        max-height: 0;
+                        overflow: hidden;
+                    }
+      </style>
+    </head>
+    <body>
+        <script src="AccordianJavascript.js"></script> 
+        <h1>JavaScript  Assignment 2</h1>
+        <h3>This is constant Accordian</h3>
+        <button class="acordian">Home</button>
+          <div class="displayinfo">
+           <p>There are two ways to customize a page in Lightning Experience. You can customize a page’s layout, or customize its contents. These are done with separate tools</p></div>
+
+            <button class="acordian">Element</button>
+           <div class="displayinfo">
+            <p>There are two ways to customize a page in Lightning Experience. You can customize a page’s layout, or customize its contents. These are done with separate tools</p></div>
+
+            <button class="acordian">Data</button>
+           <div class="displayinfo">
+           <p>There are two ways to customize a page in Lightning Experience. You can customize a page’s layout, or customize its contents. These are done with separate tools</p></div>
+
+        <script>
+             var afterclick = document.getElementsByClassName("acordian");
+            var afterclick_len=afterclick.length;
+            
+            for (let i = 0; i < afterclick_len; i++)
+            {
+                afterclick[i].onclick= function ()
+                {
+                this.classList.toggle("active");
+                var showin = this.nextElementSibling;
+                if (showin.style.maxHeight)
+                {
+                    //it is open here required to close th accordian
+                showin.style.maxHeight = null;
+                } 
+                else 
+                {
+                    //else open the accordion height
+                showin.style.maxHeight =showin.scrollHeight+"px";
+                }
+                }
+            }
+         </script>
+
+     </body>               
+</html>

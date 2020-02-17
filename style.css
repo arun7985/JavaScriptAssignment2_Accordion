@@ -1,0 +1,41 @@
+.acordian {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .acordian:after
+  {
+      content: '\02795';/*for plus sign */
+      float-size : 15px;
+      float: right;
+      margin-left: 5px ;
+  }
+  .active::after
+  {
+     
+    content: '\02796';/*for plus sign */
+    float-size : 15px;
+    float: right;
+    align-self: auto;
+    margin-left: 5px ;  
+  }
+  .active, .acordian:hover {
+    background-color: #ccc;
+  }
+  .displayinfo
+   {
+    padding: 0 18px;
+    background-color: white;
+    border-left: solid white;
+    width: 100%;
+    border-right: 1px solid white;
+    max-height: 0;
+    overflow: hidden;
+  }
